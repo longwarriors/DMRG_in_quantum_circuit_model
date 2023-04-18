@@ -4,7 +4,7 @@
 
 
 ## 一：谱分解（spectral decomposition） 
-&emsp;&emsp;哈密顿量是厄米矩阵（Hermitian），可以对角化得到一组<font color="#dd0000">实数</font><br />本征能 $\left\{ E_1, E_2, \dots, E_d \right\}$ 和对应的一组本征态 $\left\{ \ket{\hat{e}_1}, \ket{\hat{e}_2}, \dots, \ket{\hat{e}_d}  \right\}$ ，哈密顿量是由本征态密度矩阵线性叠加而来：  
+&emsp;&emsp;哈密顿量是Hermitian matrix可以对角化，得到一组**实数**本征能 $\left( E_1 , E_2 , \dots , E_d \right)$ 和对应的一组本征态 $\left( \ket{\hat{e}_1}, \ket{\hat{e}_2}, \dots, \ket{\hat{e}_d}  \right)$ ，哈密顿量就是由本征态密度矩阵线性叠加而来：  
 
 $$\begin{aligned}
 \bf{H} &= \it \sum_{i=\rm 1}^{d} E_i\ket{\hat{e}_i}\bra{\hat{e}_i} \\
@@ -36,23 +36,55 @@ $$\begin{aligned}
 &emsp;&emsp;假设单个粒子有 $d$ 个本征态，那么它张开的希尔伯特空间 $\cal H$ 就有 $d$ 个基矢。以量子计算中常用作量子比特的的电子（electron）和光子（photon）为例，自旋 $\bf{S}$ 在量化轴（quantization axis）确立的参考系下的哈密顿量为：  
 
 $$\begin{aligned}
-\bf{H} \it _e &= \begin{pmatrix} 1/2 & 0 \\ 0 & -1/2 \end{pmatrix} \\
-\bf{H} \it _p &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
+\bf{H} \it _e &= 
+\begin{pmatrix} 
+1/2 & 0 \\ 
+0 & -1/2 
+\end{pmatrix} \\
+\bf{H} \it _p &= 
+\begin{pmatrix} 
+1 & 0 & 0 \\ 
+0 & 0 & 0 \\ 
+0 & 0 & -1 
+\end{pmatrix}
 \end{aligned}$$  
 
-对哈密顿量做本征分解，得到单电子希尔伯特空间 $\cal H_1 \in \Bbb{C}^2$ 有两个本征态:  
+对哈密顿量做本征分解，得到单电子希尔伯特空间 $\cal{H}_\rm{1} \in \Bbb{C}^2$ 有两个本征态:  
 
 $$\begin{aligned}
-\ket{s_z=\frac{1}{2}}=\ket{\uarr}=\begin{pmatrix} 1 \\ 0 \end{pmatrix}  \\
-\ket{s_z=-\frac{1}{2}}=\ket{\darr}=\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\ket{s_z=\frac{1}{2}}=\ket{&#8593;}=
+\begin{pmatrix} 
+1 \\ 
+0 
+\end{pmatrix}  \\
+\ket{s_z=-\frac{1}{2}}=\ket{&#8595;}=
+\begin{pmatrix} 
+0 \\ 
+1 
+\end{pmatrix}
 \end{aligned}$$  
 
-得到单光子希尔伯特空间 $\cal H_1 \in \Bbb{C}^3$ 有三个本征态（left-handedness\anti-clockwise, linear, right-handedness\clockwise）:
+得到单光子希尔伯特空间 $\cal H_\rm{1} \in \Bbb{C}^3$ 有三个本征态（left-handedness\anti-clockwise, linear, right-handedness\clockwise）:
 
 $$\begin{aligned}
-\ket{s_z=1}=\ket{\circlearrowleft}=\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \\
-\ket{s_z=0}=\ket{\leftrightarrow}=\begin{pmatrix}  0 \\ 1 \\ 0 \end{pmatrix} \\
-\ket{s_z=-1}=\ket{\circlearrowright}=\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+\ket{s_z=1}=\ket{\circlearrowleft}=
+\begin{pmatrix} 
+1 \\ 
+0 \\ 
+0 
+\end{pmatrix} \\
+\ket{s_z=0}=\ket{\leftrightarrow}=
+\begin{pmatrix}  
+0 \\ 
+1 \\ 
+0 
+\end{pmatrix} \\
+\ket{s_z=-1}=\ket{\circlearrowright}=
+\begin{pmatrix} 
+0 \\ 
+0 \\ 
+1 
+\end{pmatrix}
 \end{aligned}$$  
 
 
@@ -61,24 +93,35 @@ $$\begin{aligned}
 
 &emsp;&emsp;量子线路模型是用多个量子比特张开希尔伯特空间，并施加量子逻辑门对量子态进行酉变换的操作，量子信息存在波函数中，即complex Hilbert space中的向量 $\vec{\psi}$ 。因此，量子线路模型就是一种量子多体问题。   
 
-&emsp;&emsp;根据量子力学[四大公理](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.110402)，复合系统希尔伯特空间 $\cal H_{1,2,\dots,N} \in \Bbb{C}^{\overbrace{d\times d\times \dots \times d}^{\it{N}}}$ 是子系统希尔伯特空间的张量积 $\cal H_1 \otimes \cal H_2 \otimes \cdots \otimes \cal H_{\it{N}} $ 。  
+&emsp;&emsp;根据量子力学[四大公理](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.110402)，复合系统希尔伯特空间 $\cal H_\rm{1,2,\dots,\it N} \in \Bbb{C}^{\overbrace{\it d\times d\times \dots \times d}^{\it{N}}}$ 是子系统希尔伯特空间的张量积 $\cal H_\rm{1} \otimes \cal H_\rm{2} \otimes \cdots \otimes \cal H_{\it{N}}$ 。  
 
-&emsp;&emsp;格点模型（lattice sites）先确定单个点粒子自旋 $\hat s_i$ 的基态，通常用费米子（Fermionic）的电子作为qubit ，$d=2$ ； 用玻色子（Bosonic）的光子作为qutrit ，$d=3$ 。然后由单个格点的本征态，张开全体 $N$ 个格点的希尔伯特空间的基矢，因此希尔伯特空间的维度为 $L=d^N$ ：     
+&emsp;&emsp;格点模型（lattice sites）先确定单个点粒子自旋 $\hat s_i$ 的基态，通常用费米子（Fermionic）的电子作为 $d=2$ 的qubit； 用玻色子（Bosonic）的光子作为 $d=3$ 的qutrit 。然后由单个格点的本征态，张开全体 $N$ 个格点的希尔伯特空间的基矢，因此希尔伯特空间的维度为 $L=d^N$ ：    
 
 $$
-\hat{e}\left(\underbrace{●●●●●●●●●●}_N\right) = \bigotimes_{i=1}^{N}\hat{s_i} = \ket{s_1,s_2,\dots,s_N}
+\hat{e}\left( 
+\underbrace{\bullet \bullet \bullet \bullet \bullet \bullet \bullet}_{N} 
+\right) = 
+\bigotimes_{i=1}^{N}\hat{s_i} = \ket{s_1,s_2,\dots,s_N}
 $$
 
 ##### 1. 量子比特复合系统的索引
 
-&emsp;&emsp;以超导量子比特为例，单比特希尔伯特空间 $\cal H_{q_0}$ 的基矢记作：  
+&emsp;&emsp;以超导量子比特为例，单比特希尔伯特空间 $\cal H_{\it{q}_\rm{0}}$ 的基矢记作：  
 
 $$\begin{aligned}
-\ket{0}=\begin{pmatrix} 1 \\ 0 \end{pmatrix}  \\
-\ket{1}=\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\ket{0}=
+\begin{pmatrix} 
+1 \\ 
+0 
+\end{pmatrix}  \\
+\ket{1}=
+\begin{pmatrix} 
+0 \\ 
+1 
+\end{pmatrix}
 \end{aligned}$$  
 
-那么3比特系统 $\left\{ q_0,q_1,q_2 \right\}$ 的希尔伯特空间 $\cal H_{q_0,q_1,q_2}$ 的基矢记作如下三种形式，分别为张量指标、独热编码、列表索引：  
+那么3比特系统 $\left( q_0,q_1,q_2 \right)$ 的希尔伯特空间 $\cal H_{q_0,q_1,q_2}$ 的基矢记作如下三种形式，分别为张量指标、独热编码、列表索引：  
 
 $$
 \hat{e}_{q_0,q_1,q_2} = 
