@@ -91,7 +91,7 @@ $$\begin{aligned}
 
 ## 二：量子多体格点模型与量子线路模型  
 
-&emsp;&emsp;量子线路模型是用多个量子比特张开希尔伯特空间，并施加量子逻辑门对量子态进行酉变换的操作，量子信息存在波函数中，即complex Hilbert space中的向量 $\vec{\psi}$ 。因此，量子线路模型就是一种量子多体问题。   
+&emsp;&emsp;量子线路模型是用多个量子比特张开希尔伯特空间，并施加量子逻辑门对量子态进行酉变换的操作，量子信息存在波函数中，即complex Hilbert space中的向量 $\hat{\psi}$ 。因此，量子线路模型就是一种量子多体问题。   
 
 &emsp;&emsp;根据量子力学[四大公理](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.110402)，复合系统希尔伯特空间 $\cal H_\rm{1,2,\dots,\it N} \in \Bbb{C}^{\overbrace{\it d\times d\times \dots \times d}^{\it{N}}}$ 是子系统希尔伯特空间的张量积 $\cal H_\rm{1} \otimes \cal H_\rm{2} \otimes \cdots \otimes \cal H_{\it{N}}$ 。  
 
@@ -106,7 +106,7 @@ $$
 
 ##### 1. 量子比特复合系统的索引
 
-&emsp;&emsp;以超导量子比特为例，单比特希尔伯特空间 $\cal H_{\it{q}_\rm{0}}$ 的基矢记作：  
+&emsp;&emsp;以超导量子比特为例，单比特希尔伯特空间 $\cal H_{{\it q}_{\rm 0}}$ 的基矢记作：  
 
 $$\begin{aligned}
 \ket{0}=
@@ -141,7 +141,27 @@ $$
 &emsp;&emsp;各量子比特的基矢做克罗克内积就生成了独热编码，例如：  
 
 $$
-\ket{1,0,0}=\begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix}=\begin{pmatrix} 0\\0\\0\\0\\1\\0\\0\\0 \end{pmatrix}
+\ket{1,0,0}=
+\begin{pmatrix} 
+0 \\ 
+1 
+\end{pmatrix} \otimes 
+\begin{pmatrix} 
+1 \\ 
+0 \end{pmatrix} \otimes 
+\begin{pmatrix} 
+1 \\ 
+0 \end{pmatrix}=
+\begin{pmatrix} 
+0\\
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0 
+\end{pmatrix}
 $$
 
 ##### 3. 张量指标与列表索引  
@@ -181,10 +201,15 @@ print(indices_col)
 
 ##### 4. 复合系统的量子态   
 
-&emsp;&emsp;$N$ 个量子比特的复合系统 $\left\{ q_0,q_1,\dots,q_{N-1} \right\}$ ，张开的希尔伯特空间是 $L=2^N$ 维，态矢量 $\hat{\psi}$ 是这 $L$ 个正交基的系数。  
+&emsp;&emsp; $N$ 个量子比特的复合系统 $\left( q_0,q_1,\dots,q_{N-1} \right)$ ，张开的希尔伯特空间是 $L=2^N$ 维，态矢量 $\hat{\psi}$ 是这 $L$ 个正交基的系数。  
 
 $$\begin{aligned}
-\hat{\psi} &= \begin{pmatrix} \vert \\ \psi_i \\ \vert \\ \end{pmatrix} \in \Bbb{C}^{L \times 1} \\ 
+\hat{\psi} &= 
+\begin{pmatrix} 
+\vert \\ 
+\psi_i \\ 
+\vert \\ 
+\end{pmatrix} \in \Bbb{C}^{L \times 1} \\ 
 \hat{\psi}^\dagger &= \begin{pmatrix} \text{---} \hspace{-0.2cm} & \psi_i^* & \hspace{-0.2cm} \text{---} \end{pmatrix} \in \Bbb{C}^{1 \times L} 
 \end{aligned}$$   
 
